@@ -392,7 +392,7 @@ if __name__ == "__main__":
 	#testParticleFilter(); 
 	#testMCPOMDP(); 
 
-	V = np.load('MCPolicy1.npy').tolist(); 
+	V = np.load('../policies/MCPolicy1.npy').tolist(); 
 	#displayPolicy(V); 
 
 	#compareToMDP(V); 

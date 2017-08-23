@@ -267,7 +267,7 @@ def animate(ans):
 		ax.set_ylim([0,.5]); 
 		
 		#grab temp images
-		fig.savefig('./tmp/img'+str(i)+".png",bbox_inches='tight',pad_inches=0)
+		fig.savefig('../tmp/img'+str(i)+".png",bbox_inches='tight',pad_inches=0)
 		plt.pause(.1)
 	
 
@@ -275,7 +275,7 @@ def animate(ans):
 	fig,ax=plt.subplots()
 	images=[]
 	for k in range(0,len(B)):
-		fname='./tmp/img%d.png' %k
+		fname='../tmp/img%d.png' %k
 		img=mgimg.imread(fname)
 		imgplot=plt.imshow(img)
 		plt.axis('off')

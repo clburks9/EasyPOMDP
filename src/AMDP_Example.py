@@ -22,14 +22,14 @@ import matplotlib.pyplot as plt;
 import numpy as np; 
 from scipy.stats import norm; 
 import time; 
-from ..policies import hallwayProblemSpec
+
 
 
 class AMDPSolver():
 
 
 	def __init__(self):
-		#modelModule = __import__('hallwayProblemSpec', globals(), locals(), ['ModelSpec'],0); 
+		modelModule = __import__('hallwayProblemSpec', globals(), locals(), ['ModelSpec'],0); 
 		modelClass = modelModule.ModelSpec;
 		self.model = modelClass();
 		self.numVaris = 10; 
@@ -170,7 +170,7 @@ def compareToMDP(ans):
 
 
 	allVars = [i/2 for i in range(0,ans.numVaris)]; 
-	[Vhat,Phat,Rhat] = loadPolicy('AMDP_Policy2.npy'); 
+	[Vhat,Phat,Rhat] = loadPolicy('../policies/AMDP_Policy2.npy'); 
  
 
 	grid = np.ones(shape=(1,ans.model.N)); 

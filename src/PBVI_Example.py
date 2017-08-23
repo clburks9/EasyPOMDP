@@ -267,7 +267,7 @@ def compareToMDP(ans):
 def checkBoth(ans):
 	fig,axarr = plt.subplots(2,sharex=True); 
 
-	Gamma = np.load('PBVI_Policy.npy').tolist();
+	Gamma = np.load('../policies/PBVI_Policy.npy').tolist();
 
 	#Gamma = ans.B; 
 
