@@ -290,6 +290,6 @@ if __name__ == "__main__":
 
 	#compareToMDP(ans); 
 
-	#checkBoth(ans); 
-	animate(ans); 
+	checkBoth(ans); 
+	#animate(ans); 
 	#simulate(ans); 
