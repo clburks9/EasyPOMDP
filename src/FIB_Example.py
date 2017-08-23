@@ -44,8 +44,8 @@ class FIBSolver():
 		self.solveMDP(); 
 		self.findQ(); 
 
-	def solveMDP(self):
-		
+
+	def solveMDP(self):		
 		self.V = [min(min(self.model.R))]*self.model.N; 
 		W = [np.random.random()]*self.model.N; 
 
@@ -54,7 +54,6 @@ class FIBSolver():
 			for i in range(0,self.model.N):
 				self.V[i] = self.model.discount * max(self.model.R[a][i] + sum(self.V[j]*self.model.px[a][i][j] for j in range(0,self.model.N)) for a in range(0,self.model.acts)); 
 	
-
 	def findQ(self):
 		self.Q = np.zeros(shape=(self.model.acts,self.model.N)).tolist(); 
 
@@ -66,11 +65,11 @@ class FIBSolver():
 
 	def getAction(self,bel):
 		y = [0]*self.model.acts; 
-		y[0] = sum(bel[i]*self.Q[0][i] for i in range(0,self.model.N)); 
-		y[1] = sum(bel[i]*self.Q[1][i] for i in range(0,self.model.N)); 
-		y[2] = sum(bel[i]*self.Q[2][i] for i in range(0,self.model.N)); 
-
+		for j in range(0,len(y)):
+			y[j] = sum(bel[i]*self.Q[j][i] for i in range(0,self.model.N));
+		
 		act = np.argmax(y); 
+
 		return act; 
 
 
